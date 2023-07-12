@@ -48,10 +48,7 @@ const ProductCard = (props) => {
               )}
 
               <img
-                  src={
-                      import.meta.env.VITE_STRAPI_UPLOAD_URL +
-                      props.item.attributes?.image?.data?.attributes?.url
-                  }
+                  src={props.item.attributes?.image?.data?.attributes?.url}
                   alt={props.item?.attributes?.title}
                   loading="lazy"
                   onClick={() =>

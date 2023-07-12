@@ -37,9 +37,9 @@ const ProductImage = () => {
       }, [productName]);
 
       useEffect(()=>{
-        setImage(import.meta.env.VITE_STRAPI_UPLOAD_URL +  data[0]?.attributes?.image?.data?.attributes?.url),
-        setHeading(data[0]?.attributes?.title),
-        setQuery(true)
+        setImage(data[0]?.attributes?.image?.data?.attributes?.url),
+            setHeading(data[0]?.attributes?.title),
+            setQuery(true);
       },[data])
 
   return (
