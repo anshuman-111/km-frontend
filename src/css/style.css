@@ -884,7 +884,7 @@ body ::selection {
 }
 
 .home .products-carousel {
-    background: url("../assets/") repeat center center
+    background: url("../assets/img/backgrounds/bg-cake.jpg") repeat center center
 }
 
 @media only screen and (min-width: 768px) {
