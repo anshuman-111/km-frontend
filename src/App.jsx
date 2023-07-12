@@ -27,7 +27,7 @@ function App() {
   
   useEffect(() => {
     if(location.pathname==='/'){
-      loadScript("/src/homePage.js");
+      loadScript("/js/homePage.js");
     }    
     window.scrollTo(0, 0);
   }, [location]);
