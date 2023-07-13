@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import useFetch from '../../components/Hooks/useFetch'
 import ProductDisplay from '../../components/ProductComponents/ProductDisplay'
-import Logo from '../../assets/img/logo.png';
+import Logo from "../../assets/img/logo.webp";
 import axios from 'axios'
 import SearchResults from '../../components/ProductComponents/SearchResults'
 import Loader from '../../components/HomeComponents/Loader'

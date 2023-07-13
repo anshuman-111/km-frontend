@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
-import logo from '../../assets/img/logo.png'
+import logo from "../../assets/img/logo.webp";
 import Loader from '../HomeComponents/Loader'
 const ProductImage = () => {
     const productName = useParams().productName
