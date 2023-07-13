@@ -1,8 +1,8 @@
 import React from 'react'
-import fssaiLogo from "../../assets/img/logo-fssai.png";
-import eggFreeLogo from "../../assets/img/logo-egg.png";
-import vegLogo from "../../assets/img/logo-veg.png";
-import logo from "../../assets/img/logo.png";
+import fssaiLogo from "../../assets/img/logo-fssai.webp";
+import eggFreeLogo from "../../assets/img/logo-egg.webp";
+import vegLogo from "../../assets/img/logo-veg.webp";
+import logo from "../../assets/img/logo.webp";
 import { Link } from "react-router-dom";
 const Footer = () => {
     return (

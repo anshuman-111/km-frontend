@@ -775,7 +775,7 @@ body ::selection {
 }
 
 .home .showcase {
-    background: linear-gradient(to bottom, rgba(80, 71, 70, 0.7), rgba(80, 71, 70, 0.7)), url("../assets/img/backgrounds/bg-hero.jpg") no-repeat center center/cover;
+    background: linear-gradient(to bottom, rgba(80, 71, 70, 0.7), rgba(80, 71, 70, 0.7)), url("../assets/img/backgrounds/bg-hero.webp") no-repeat center center/cover;
     padding-top: 6.4rem
 }
 
@@ -884,7 +884,7 @@ body ::selection {
 }
 
 .home .products-carousel {
-    background: url("../assets/img/backgrounds/bg-cake.jpg") repeat center center
+    background: url("../assets/img/backgrounds/bg-cake.webp") repeat center center
 }
 
 @media only screen and (min-width: 768px) {
@@ -898,7 +898,7 @@ body ::selection {
 }
 
 .categories {
-    background: linear-gradient(to bottom, rgba(80, 71, 70, 0.7), rgba(80, 71, 70, 0.7)), url("../assets/img/backgrounds/bg-categories.jpg") no-repeat center center/cover
+    background: linear-gradient(to bottom, rgba(80, 71, 70, 0.7), rgba(80, 71, 70, 0.7)), url("../assets/img/backgrounds/bg-categories.webp") no-repeat center center/cover
 }
 
 @media only screen and (min-width: 768px) {
@@ -1013,7 +1013,7 @@ body ::selection {
 }
 
 .about-testimonials {
-    background: url("../assets/img/backgrounds/bg-cake.jpg") repeat center center
+    background: url("../assets/img/backgrounds/bg-cake.webp") repeat center center
 }
 
 @media only screen and (min-width: 768px) {
@@ -1046,7 +1046,7 @@ body ::selection {
 }
 
 .about-founder {
-    background: linear-gradient(to bottom, rgba(80, 71, 70, 0.7), rgba(80, 71, 70, 0.7)), url("../assets/img/backgrounds/bg-about.jpg") no-repeat center center/cover
+    background: linear-gradient(to bottom, rgba(80, 71, 70, 0.7), rgba(80, 71, 70, 0.7)), url("../assets/img/backgrounds/bg-about.webp") no-repeat center center/cover
 }
 
 @media only screen and (min-width: 768px) {
@@ -1120,7 +1120,7 @@ body ::selection {
 }
 
 .contact {
-    background: url("../assets/img/backgrounds/bg-contact.jpg") no-repeat center center
+    background: url("../assets/img/backgrounds/bg-contact.webp") no-repeat center center
 }
 
 @media only screen and (min-width: 768px) {

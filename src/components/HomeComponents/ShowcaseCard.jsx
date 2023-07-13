@@ -5,7 +5,7 @@ const ShowcaseCard = ({item}) => {
       <figure className="swiper-slide">
           <img
               src={item.attributes?.image?.data?.attributes?.url}
-              alt="Product 1"
+              alt={item.attributes?.title}
               loading="lazy"
           />
       </figure>
