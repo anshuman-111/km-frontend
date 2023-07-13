@@ -50,9 +50,14 @@ const Footer = () => {
                 </div>
                 {/* <!-- Footer Logos --> */}
                 <div className="footer-other-logos">
-                    <img src={eggFreeLogo} alt="Egg Free" />
-                    <img src={fssaiLogo} className="fssai" alt="FSSAI" />
-                    <img src={vegLogo} alt="100% Vegeterian" />
+                    <img src={eggFreeLogo} alt="Egg Free" loading="lazy" />
+                    <img
+                        src={fssaiLogo}
+                        className="fssai"
+                        alt="FSSAI"
+                        loading="lazy"
+                    />
+                    <img src={vegLogo} alt="100% Vegeterian" loading="lazy" />
                 </div>
             </div>
         </footer>
