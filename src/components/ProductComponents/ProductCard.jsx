@@ -9,7 +9,9 @@ const ProductCard = (props) => {
             SetCardSwiper("card");
         }
     }, []);
-
+    const slug = props.item?.attributes?.title
+        .toLowerCase()
+        .replace(/\s+/g, "-");
     const canonical = document.querySelector("a[title=Share]");
     let title = props.item?.attributes?.title;
     let text = `Check out ${props.item?.attributes?.title} at KocoaMania!`;
@@ -17,9 +19,6 @@ const ProductCard = (props) => {
         ? `${import.meta.env.VITE_REACT_URL}/products/view/${slug}`
         : "";
     const shareDetails = { url, title, text };
-    const slug = props.item?.attributes?.title
-        .toLowerCase()
-        .replace(/\s+/g, "-");
     const handleSharing = async () => {
         if (navigator.share) {
             try {
