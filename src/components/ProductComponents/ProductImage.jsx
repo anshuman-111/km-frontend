@@ -11,7 +11,7 @@ const ProductImage = () => {
     const [data, setData] = useState([])
     const [msg, setMsg] = useState('Click to copy link')
   const url = window.location.href
-  const clipBoardText = `Check out the ${heading} by Kocoa Mania at ${url}`
+  const clipBoardText = `${url}`;
   console.log(url)
   
     useEffect(() => {
