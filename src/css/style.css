@@ -199,7 +199,8 @@ body ::selection {
     right: 2rem;
     line-height: 0.5;
     font-size: 5rem;
-    color: #282828
+    color: #282828;
+        cursor: pointer;
 }
 
 .overlay .popup-text {

@@ -19,7 +19,9 @@ const ProductCard = (props) => {
           }`
         : "";
     const shareDetails = { url, title, text };
-
+    const slug = props.item?.attributes?.title
+        .toLowerCase()
+        .replace(/\s+/g, "-");
     const handleSharing = async () => {
         if (navigator.share) {
             try {
@@ -41,9 +43,7 @@ const ProductCard = (props) => {
         props.phone
     }/?text=Hello!. Could you please provide me with information for ${
         props.item?.attributes?.title
-    }. LINK: ${import.meta.env.VITE_REACT_URL}/products/view/${
-        props.item?.attributes?.title
-    }`;
+    }. LINK: ${import.meta.env.VITE_REACT_URL}/products/view/${slug}`;
 
     return (
         <figure className={cardSwiper}>
@@ -53,7 +53,7 @@ const ProductCard = (props) => {
                 ) : (
                     <></>
                 )}
-                <Link to={`/products/view/${props.item?.attributes?.title}`}>
+                <Link to={`/products/view/${slug}`}>
                     <img
                         src={
                             props.item.attributes?.image?.data?.attributes?.url

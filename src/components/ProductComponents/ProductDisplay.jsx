@@ -17,16 +17,24 @@ const ProductDisplay = (props) => {
   return (
       <section className="tab-content">
           <div className="tab-item active">
-            <div className="products">
-            {error
-          ? "Something went wrong!"
-          : loading
-          ? " LOADING ..."
-          : data.map((item) => <ProductCard item={item} phone={props.phone} key={item.id} />)}
-            </div>
+              <div className="products">
+                  {error ? (
+                      ""
+                  ) : loading ? (
+                      <></>
+                  ) : (
+                      data.map((item) => (
+                          <ProductCard
+                              item={item}
+                              phone={props.phone}
+                              key={item.id}
+                          />
+                      ))
+                  )}
+              </div>
           </div>
-    </section>
-  )
+      </section>
+  );
 }
 
 export default ProductDisplay
