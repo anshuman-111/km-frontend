@@ -14,9 +14,7 @@ const ProductCard = (props) => {
     let title = props.item?.attributes?.title;
     let text = `Check out ${props.item?.attributes?.title} at KocoaMania!`;
     let url = canonical
-        ? `${import.meta.env.VITE_REACT_URL}/products/view/${
-              props.item?.attributes?.title
-          }`
+        ? `${import.meta.env.VITE_REACT_URL}/products/view/${slug}`
         : "";
     const shareDetails = { url, title, text };
     const slug = props.item?.attributes?.title
