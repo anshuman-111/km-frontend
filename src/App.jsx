@@ -14,25 +14,27 @@ import ProductImage from './components/ProductComponents/ProductImage';
 
 function App() {
   const location = useLocation();
-  useEffect(()=>{
-    const handlePopState = () => {
-      window.location.reload()
-    }
-    window.addEventListener('popstate', handlePopState)
-
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    }
-  },[])
-  
   useEffect(() => {
-    if(location.pathname==='/'){
-      loadScript("/js/homePage.js");
-    }    
-    window.scrollTo(0, 0);
+      const handlePopState = () => {
+          if (!location.pathname.startsWith("/products")) {
+              window.location.reload();
+          }
+      };
+      window.addEventListener("popstate", handlePopState);
+
+      return () => {
+          window.removeEventListener("popstate", handlePopState);
+      };
+  }, []);
+
+  useEffect(() => {
+      if (location.pathname === "/") {
+          loadScript("/js/homePage.js");
+      }
+      window.scrollTo(0, 0);
   }, [location]);
-  const {data, loading, error} = useFetch("/home?populate=*")
-  const phone = data?.attributes?.phone.toString().slice(1,)
+  const { data, loading, error } = useFetch("/home?populate=*");
+  const phone = data?.attributes?.phone.toString().slice(1);
   return (
       <div className="App">
           <div>
@@ -40,12 +42,12 @@ function App() {
                   <Route
                       key={location.key}
                       path="/"
-                      element={<Home data={data} />}
+                      element={<Home data={data} isLoading={loading} />}
                   />
                   <Route
                       key={location.key}
                       path="/:params"
-                      element={<Home data={data} />}
+                      element={<Home data={data} isLoading={loading} />}
                   />
                   <Route
                       key={location.key}

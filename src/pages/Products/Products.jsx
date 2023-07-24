@@ -22,47 +22,45 @@ const Products = ({phone}) => {
 
 
   // Category Selection states from URL or From Side Nav
-  const [categorySelection, setSelection] = useState()
-  const categoryTitle = useParams().category
+  const [categorySelection, setSelection] = useState("");
+  const categoryTitle = useParams().category;
 
-  let searchBoxList = new Set()
-  let suggestions = new Set()
-  
+  let searchBoxList = new Set();
+  let suggestions = new Set();
 
-
-   // Setting category state from URL params
-  useEffect(()=>{
-    if(categoryTitle!=='undefined'){
-     setSelection(categoryTitle)
-    }
-  },[categoryTitle])
-
-    // Adding category click function
-    
-    const handleCategoryClick = (title) => {
-        setSelection(title)
-        setSearchList([])
-        setSearchInput('')
-        setShowNav('')
-        setRotate('')
-        document.getElementById('search').value = ''
+  // Setting category state from URL params
+  useEffect(() => {
+      if (categoryTitle !== undefined) {
+          setSelection(categoryTitle);
+      } else {
+          setSelection("Birthday");
       }
+  }, [categoryTitle]);
 
-     
+  // Adding category click function
+
+  const handleCategoryClick = (title) => {
+      setSelection(title);
+      setSearchList([]);
+      setSearchInput("");
+      setShowNav("");
+      setRotate("");
+      document.getElementById("search").value = "";
+  };
+
   // API Call for getting categories for side nav
-  const {data, loading, error} = useFetch('/categories?populate[0]=title&populate[products][populate]=*&sort=id')
-  useEffect(()=>{
-      if(!loading && categorySelection!==undefined){
-    
-        data?.forEach((cat)=>{
-          if(cat?.attributes?.title === categorySelection){
-            setCategoryWiseList(cat?.attributes?.products?.data)
-            
-          }
-        })
+  const { data, loading, error } = useFetch(
+      "/categories?populate[0]=title&populate[products][populate]=*&sort=id"
+  );
+  useEffect(() => {
+      if (!loading && categorySelection !== undefined) {
+          data?.forEach((cat) => {
+              if (cat?.attributes?.title === categorySelection) {
+                  setCategoryWiseList(cat?.attributes?.products?.data);
+              }
+          });
       }
-      
-    },[categorySelection, data])
+  }, [categorySelection, data]);
     
 
 

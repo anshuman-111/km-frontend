@@ -8,14 +8,7 @@ import Footer from "../../components/Footer/Footer";
 import PrivacyPolicy from "../../components/Footer/PrivacyPolicy";
 import Loader from "../../components/HomeComponents/Loader";
 
-const Home = ({ data }) => {
-    const [isLoading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
-    });
+const Home = ({ data, isLoading }) => {
     const heroData = {
         wbte: data?.attributes?.wbte,
         wate: data?.attributes?.wate,
