@@ -25,6 +25,8 @@ dist-ssr
 
 #Env
 .env
+.htaccess
+robots.txt
 
 # Images
 

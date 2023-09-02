@@ -3,8 +3,10 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import logo from "../../assets/img/logo.webp";
 import Loader from '../HomeComponents/Loader'
+
 const ProductImage = () => {
     const productName = useParams().productName.replace(/-/g, " ");
+    const productId = useParams().productId;
     const [query, setQuery] = useState(false);
     const [image, setImage] = useState("");
     const [heading, setHeading] = useState("");
@@ -18,7 +20,7 @@ const ProductImage = () => {
             if (productName.length > 0) {
                 const res = await axios.get(
                     import.meta.env.VITE_REACT_APP_API_URL +
-                        `/products?populate=*&[filters][title][$eqi]=${productName}`,
+                        `/products?populate=*&[filters][title][$eqi]=${productName}&[filters][id][$eqi]=${productId}`,
                     {
                         headers: {
                             Authorization:
@@ -64,6 +66,17 @@ const ProductImage = () => {
 
                     {/* <!-- Product details content --> */}
                     <div className="container">
+                        <a
+                            onClick={() => window.history.back()}
+                            title="Back to Products"
+                            className="btn btn-primary btn-white"
+                        >
+                            <i
+                                className="fa fa-arrow-circle-left "
+                                aria-hidden="true"
+                            ></i>{" "}
+                            Back to Products
+                        </a>
                         <figure>
                             <img src={image} alt={heading} />
                             <figcaption>

@@ -16,7 +16,9 @@ const ProductCard = (props) => {
     let title = props.item?.attributes?.title;
     let text = `Check out ${props.item?.attributes?.title} at KocoaMania!`;
     let url = canonical
-        ? `${import.meta.env.VITE_REACT_URL}/products/view/${slug}`
+        ? `${import.meta.env.VITE_REACT_URL}/products/view/${slug}/${
+              props?.item?.id
+          }`
         : "";
     const shareDetails = { url, title, text };
     const handleSharing = async () => {
@@ -40,7 +42,9 @@ const ProductCard = (props) => {
         props.phone
     }/?text=Hello!. Could you please provide me with information for ${
         props.item?.attributes?.title
-    }. LINK: ${import.meta.env.VITE_REACT_URL}/products/view/${slug}`;
+    }. LINK: ${import.meta.env.VITE_REACT_URL}/products/view/${slug}/${
+        props?.item?.id
+    }`;
 
     return (
         <figure className={cardSwiper}>
@@ -50,7 +54,7 @@ const ProductCard = (props) => {
                 ) : (
                     <></>
                 )}
-                <Link to={`/products/view/${slug}`}>
+                <Link to={`/products/view/${slug}/${props?.item?.id}`}>
                     <img
                         src={
                             props.item.attributes?.image?.data?.attributes?.url
